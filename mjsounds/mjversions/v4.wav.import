@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/v4.wav-f769641a2c07620a5e7d278bb270fed6.sample"
+
+[deps]
+
+source_file="res://mjsounds/mjversions/v4.wav"
+dest_files=[ "res://.import/v4.wav-f769641a2c07620a5e7d278bb270fed6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

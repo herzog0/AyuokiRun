@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://icy_platform17.gd" type="Script" id=1]
+[ext_resource path="res://sprites/Platform Tileset/icy.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 134.454, 50.2678 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 132.615, 10 )
+
+[node name="icy_platform19" type="StaticBody2D"]
+position = Vector2( 1275.19, 203.811 )
+script = ExtResource( 1 )
+
+[node name="icon" type="Sprite" parent="."]
+position = Vector2( -39.4685, -1.08096 )
+texture = ExtResource( 2 )
+
+[node name="icon2" type="Sprite" parent="."]
+position = Vector2( 42.7965, -1.08096 )
+texture = ExtResource( 2 )
+
+[node name="icon3" type="Sprite" parent="."]
+position = Vector2( 129.134, -1.89548 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 44.7764, -1.78096 )
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 1.16626, -5.83176 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 43.287, -51.6081 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 43.287, -51.6081 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

@@ -1,0 +1,1600 @@
+[gd_scene load_steps=32 format=2]
+
+[ext_resource path="res://fase1.gd" type="Script" id=1]
+[ext_resource path="res://sprites/Platform Tileset/New Piskel.png" type="Texture" id=2]
+[ext_resource path="res://sprites/image.png" type="Texture" id=3]
+[ext_resource path="res://icy_platform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://coin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://mjsounds/light_collected.ogg" type="AudioStream" id=6]
+[ext_resource path="res://jogador.tscn" type="PackedScene" id=7]
+[ext_resource path="res://MJ.tscn" type="PackedScene" id=8]
+[ext_resource path="res://chapeu.tscn" type="PackedScene" id=9]
+[ext_resource path="res://sprites/new_background.png" type="Texture" id=10]
+[ext_resource path="res://CanvasLayer.gd" type="Script" id=11]
+[ext_resource path="res://sprites/blank.png" type="Texture" id=12]
+[ext_resource path="res://sprites/backtext.png" type="Texture" id=13]
+[ext_resource path="res://mjsounds/rusbe.wav" type="AudioStream" id=14]
+[ext_resource path="res://mjsounds/loose.ogg" type="AudioStream" id=15]
+[ext_resource path="res://mjsounds/shrek/morreu.wav" type="AudioStream" id=16]
+[ext_resource path="res://mjsounds/mjversions/v1.wav" type="AudioStream" id=17]
+[ext_resource path="res://mjsounds/mjversions/v2.wav" type="AudioStream" id=18]
+[ext_resource path="res://mjsounds/mjversions/v3.wav" type="AudioStream" id=19]
+[ext_resource path="res://mjsounds/mjversions/v4.wav" type="AudioStream" id=20]
+[ext_resource path="res://mjsounds/mjversions/v5.wav" type="AudioStream" id=21]
+[ext_resource path="res://sprites/mj/trim.png" type="Texture" id=22]
+[ext_resource path="res://Shrek.tscn" type="PackedScene" id=23]
+[ext_resource path="res://sprites/shrekdied.png" type="Texture" id=24]
+[ext_resource path="res://checkpoint.tscn" type="PackedScene" id=25]
+[ext_resource path="res://sprites/grave.png" type="Texture" id=26]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 53.926, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 18840.7, 10 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 289.582, 59.3782 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 50.3973, 50.2678 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 226.388, 10 )
+
+[node name="fase1" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="Area2D2" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 1135.95, -154.935 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2( 0.598633, -52.6888 )
+shape = SubResource( 1 )
+
+[node name="Chao" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chao"]
+position = Vector2( 410, 550 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Chao"]
+position = Vector2( 38306.8, 552.449 )
+shape = SubResource( 2 )
+
+[node name="fim" type="Area2D" parent="Chao"]
+position = Vector2( 19364.7, 634.776 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chao/fim"]
+position = Vector2( -4.09961, 92.2744 )
+scale = Vector2( 0.930797, 1.04752 )
+shape = SubResource( 5 )
+
+[node name="Plataformas" type="Node" parent="."]
+
+[node name="grassy_platform3" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 411.911, 330.486 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform3"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform3"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform" type="StaticBody2D" parent="Plataformas"]
+editor/display_folded = true
+position = Vector2( 512.47, 298.764 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform2" type="StaticBody2D" parent="Plataformas"]
+editor/display_folded = true
+position = Vector2( 611.777, 298.764 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform2"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform2"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform4" type="StaticBody2D" parent="Plataformas"]
+editor/display_folded = true
+position = Vector2( 1211.43, 453.195 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform4"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform4"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform5" type="StaticBody2D" parent="Plataformas"]
+editor/display_folded = true
+position = Vector2( 1308.78, 453.195 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform5"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform5"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform6" type="StaticBody2D" parent="Plataformas"]
+editor/display_folded = true
+position = Vector2( 1507.29, 338.396 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform6"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform6"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform7" type="StaticBody2D" parent="Plataformas"]
+editor/display_folded = true
+position = Vector2( 1708.19, 240.338 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform7"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform7"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform8" type="StaticBody2D" parent="Plataformas"]
+editor/display_folded = true
+position = Vector2( 2131.51, 374.27 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform8"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform8"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform9" type="StaticBody2D" parent="Plataformas"]
+editor/display_folded = true
+position = Vector2( 2837.05, 491.462 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform9"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform9"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform10" type="StaticBody2D" parent="Plataformas"]
+editor/display_folded = true
+position = Vector2( 2837.05, 491.462 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform10"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform10"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform11" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 3057.27, 359.327 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform11"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform11"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform12" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 3156.73, 359.327 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform12"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform12"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform13" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 3256.18, 359.327 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform13"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform13"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform14" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 3354.78, 359.327 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform14"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform14"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform15" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 3453.38, 359.327 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform15"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform15"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform16" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 3551.97, 359.327 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform16"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform16"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform17" type="StaticBody2D" parent="Plataformas"]
+editor/display_folded = true
+position = Vector2( 3896.42, 493.26 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform17"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform17"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform18" type="StaticBody2D" parent="Plataformas"]
+editor/display_folded = true
+position = Vector2( 3994.87, 470.405 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform18"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform18"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform19" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 4091.93, 445.791 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform19"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform19"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform20" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 4190.25, 426.585 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform20"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform20"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform21" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 4289.2, 404.725 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform21"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform21"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform22" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 4387.02, 378.586 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform22"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform22"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform23" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 4483.24, 362.034 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform23"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform23"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform24" type="StaticBody2D" parent="Plataformas"]
+editor/display_folded = true
+position = Vector2( 5163.99, 491.501 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform24"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform24"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform25" type="StaticBody2D" parent="Plataformas"]
+editor/display_folded = true
+position = Vector2( 4803.59, 491.501 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform25"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform25"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform26" type="StaticBody2D" parent="Plataformas"]
+editor/display_folded = true
+position = Vector2( 4900.28, 391.291 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform26"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform26"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform27" type="StaticBody2D" parent="Plataformas"]
+editor/display_folded = true
+position = Vector2( 4998.73, 294.596 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform27"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform27"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform28" type="StaticBody2D" parent="Plataformas"]
+editor/display_folded = true
+position = Vector2( 5095.43, 196.143 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform28"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform28"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform29" type="StaticBody2D" parent="Plataformas"]
+editor/display_folded = true
+position = Vector2( 5195.64, 240.095 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform29"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform29"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform30" type="StaticBody2D" parent="Plataformas"]
+editor/display_folded = true
+position = Vector2( 5195.64, 240.095 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform30"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform30"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform31" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 6458.9, 267.555 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform31"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform31"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform32" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 6557.93, 267.555 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform32"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform32"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform33" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 6652.11, 267.555 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform33"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform33"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform42" type="StaticBody2D" parent="Plataformas"]
+editor/display_folded = true
+position = Vector2( 6223.34, 265.711 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform42"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform42"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform34" type="StaticBody2D" parent="Plataformas"]
+editor/display_folded = true
+position = Vector2( 6753.15, 299.013 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform34"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform34"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform35" type="StaticBody2D" parent="Plataformas"]
+editor/display_folded = true
+position = Vector2( 6853.37, 330.659 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform35"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform35"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform36" type="StaticBody2D" parent="Plataformas"]
+editor/display_folded = true
+position = Vector2( 6953.58, 362.304 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform36"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform36"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform37" type="StaticBody2D" parent="Plataformas"]
+editor/display_folded = true
+position = Vector2( 7053.79, 392.192 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform37"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform37"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform38" type="StaticBody2D" parent="Plataformas"]
+editor/display_folded = true
+position = Vector2( 7053.79, 297.255 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform38"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform38"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform39" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 7152.24, 360.546 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform39"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform39"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform40" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 7252.45, 291.981 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform40"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform40"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform43" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 8823.91, 493.701 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform43"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform43"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform44" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 8851.07, 393.354 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform44"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform44"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform45" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 8950.66, 393.354 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform45"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform45"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform106" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 10164.4, 491.406 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform106"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform106"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform46" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 11323, 407.95 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform46"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform46"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform47" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 13736.5, 492.757 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform47"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform47"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform48" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 13835.1, 492.757 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform48"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform48"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform49" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 13929.3, 492.757 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform49"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform49"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform50" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 14025.7, 492.757 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform50"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform50"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform51" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 14119.9, 492.757 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform51"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform51"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform52" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 14214, 492.757 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform52"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform52"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform53" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 14214, 422.951 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform53"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform53"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform54" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 14260.6, 356.469 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform54"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform54"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform80" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 14260.6, 356.469 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform80"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform80"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform81" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 14355.6, 356.469 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform81"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform81"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform82" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 14669.2, 356.469 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform82"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform82"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform83" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 14758.8, 356.469 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform83"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform83"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform84" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 14832.8, 301.924 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform84"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform84"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform85" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 14926.3, 301.924 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform85"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform85"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform86" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 14926.3, 257.12 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform86"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform86"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform87" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 15019.8, 257.12 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform87"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform87"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform88" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 15296.5, 257.12 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform88"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform88"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform89" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 15121.1, 358.417 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform89"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform89"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform90" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 15019.9, 358.417 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform90"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform90"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform91" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 15019.9, 303.872 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform91"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform91"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform92" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 15019.9, 261.016 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform92"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform92"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform93" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 14672.1, 129.595 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform93"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform93"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform94" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 15282, 490.734 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform94"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform94"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform95" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 15375.3, 490.734 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform95"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform95"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform96" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 15473.3, 490.734 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform96"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform96"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform97" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 15545.1, 490.734 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform97"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform97"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform98" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 15545.1, 423.768 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform98"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform98"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform99" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 15609.6, 385.501 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform99"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform99"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform100" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 15707.7, 385.501 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform100"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform100"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform101" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 15789, 385.501 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform101"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform101"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform102" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 15875.1, 385.501 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform102"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform102"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform103" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 15875.1, 493.126 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform103"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform103"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform104" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 15875.1, 428.551 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform104"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform104"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform105" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 15875.1, 385.501 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform105"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform105"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform107" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 19514.3, 495.55 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform107"]
+position = Vector2( -212.948, 95.8666 )
+texture = ExtResource( 2 )
+
+[node name="icon2" type="Sprite" parent="Plataformas/grassy_platform107"]
+position = Vector2( -119.849, 95.8666 )
+texture = ExtResource( 2 )
+
+[node name="icon3" type="Sprite" parent="Plataformas/grassy_platform107"]
+position = Vector2( -98.9484, 95.8666 )
+texture = ExtResource( 2 )
+
+[node name="grassy_platform55" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 14260.6, 137.079 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform55"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform55"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform56" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 14166.7, 137.079 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform56"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform56"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform57" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 14076.9, 137.079 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform57"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform57"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform58" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 13981.7, 137.079 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform58"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform58"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform59" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 13900.1, 137.079 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform59"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform59"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform60" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 13803.5, 137.079 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform60"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform60"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform61" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 13746.4, 137.079 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform61"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform61"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform62" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 13728.7, 137.079 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform62"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform62"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform63" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 13728.7, 68.344 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform63"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform63"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform64" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 13728.7, 16.793 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform64"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform64"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform65" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 13827.5, 16.793 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform65"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform65"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform66" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 13827.5, 74.0718 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform66"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform66"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform67" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 13827.5, 74.0718 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform67"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform67"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform68" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 13923.4, 74.0718 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform68"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform68"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform69" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 14017.9, 74.0718 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform69"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform69"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform70" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 14115.3, 74.0718 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform70"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform70"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform71" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 14214.1, 74.0718 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform71"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform71"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform72" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 14259.9, 74.0718 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform72"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform72"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform73" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 14259.9, 16.793 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform73"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform73"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform74" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 14169.7, 16.793 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform74"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform74"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform75" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 14076.6, 16.793 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform75"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform75"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform76" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 13996.4, 16.793 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform76"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform76"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform77" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 13996.4, 16.793 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform77"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform77"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform78" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 13906.2, 16.793 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform78"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform78"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform79" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 13813.2, 16.793 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform79"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform79"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="grassy_platform41" type="StaticBody2D" parent="Plataformas"]
+position = Vector2( 7941.01, 450.603 )
+
+[node name="icon" type="Sprite" parent="Plataformas/grassy_platform41"]
+position = Vector2( 1.25671, -2.70996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/grassy_platform41"]
+position = Vector2( 1.54761, -2.32132 )
+shape = SubResource( 3 )
+
+[node name="GAMUX" type="StaticBody2D" parent="Plataformas"]
+editor/display_folded = true
+position = Vector2( 1045.77, 274.892 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="icon" type="Sprite" parent="Plataformas/GAMUX"]
+position = Vector2( -126.065, 10.0932 )
+texture = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plataformas/GAMUX"]
+polygon = PoolVector2Array( 6.93335, -72.5924, 3.66821, 86.5651, -124.697, 161.481, -256.831, 96.882, -260.016, -69.7424, -127.967, -145.742 )
+
+[node name="icy_platform19" parent="Plataformas" instance=ExtResource( 4 )]
+
+[node name="icy_platform22" parent="Plataformas" instance=ExtResource( 4 )]
+position = Vector2( 5478.77, 490.379 )
+
+[node name="icy_platform23" parent="Plataformas" instance=ExtResource( 4 )]
+position = Vector2( 5871.7, 388.275 )
+
+[node name="icy_platform24" parent="Plataformas" instance=ExtResource( 4 )]
+position = Vector2( 6139.81, 492.137 )
+
+[node name="icy_platform20" parent="Plataformas" instance=ExtResource( 4 )]
+position = Vector2( 2360.28, 265.883 )
+
+[node name="icy_platform21" parent="Plataformas" instance=ExtResource( 4 )]
+position = Vector2( 2767.96, 277.547 )
+
+[node name="icy_platform25" parent="Plataformas" instance=ExtResource( 4 )]
+position = Vector2( 7293.89, 199.38 )
+
+[node name="icy_platform26" parent="Plataformas" instance=ExtResource( 4 )]
+position = Vector2( 9094.93, 402.758 )
+
+[node name="icy_platform27" parent="Plataformas" instance=ExtResource( 4 )]
+position = Vector2( 9502.54, 389.431 )
+
+[node name="icy_platform28" parent="Plataformas" instance=ExtResource( 4 )]
+position = Vector2( 9872.23, 386.258 )
+
+[node name="icy_platform29" parent="Plataformas" instance=ExtResource( 4 )]
+position = Vector2( 10303.8, 435.445 )
+
+[node name="icy_platform30" parent="Plataformas" instance=ExtResource( 4 )]
+position = Vector2( 11074.9, 490.978 )
+
+[node name="icy_platform31" parent="Plataformas" instance=ExtResource( 4 )]
+position = Vector2( 11487, 339.608 )
+
+[node name="icy_platform32" parent="Plataformas" instance=ExtResource( 4 )]
+position = Vector2( 11918.7, 339.608 )
+
+[node name="icy_platform33" parent="Plataformas" instance=ExtResource( 4 )]
+position = Vector2( 12359, 339.608 )
+
+[node name="icy_platform34" parent="Plataformas" instance=ExtResource( 4 )]
+position = Vector2( 12767, 339.608 )
+
+[node name="icy_platform35" parent="Plataformas" instance=ExtResource( 4 )]
+position = Vector2( 13252.9, 493.398 )
+
+[node name="icy_platform36" parent="Plataformas" instance=ExtResource( 4 )]
+position = Vector2( 13252.9, 493.398 )
+
+[node name="Moedas" type="Node2D" parent="."]
+
+[node name="coin" parent="Moedas" instance=ExtResource( 5 )]
+position = Vector2( 508.433, 202.594 )
+
+[node name="coin2" parent="Moedas" instance=ExtResource( 5 )]
+position = Vector2( 913.988, 320.787 )
+
+[node name="coin3" parent="Moedas" instance=ExtResource( 5 )]
+position = Vector2( 1818.03, 36.1805 )
+
+[node name="coin4" parent="Moedas" instance=ExtResource( 5 )]
+position = Vector2( 2126.56, 292.088 )
+
+[node name="coin6" parent="Moedas" instance=ExtResource( 5 )]
+position = Vector2( 2969.28, 344.942 )
+
+[node name="coin5" parent="Moedas" instance=ExtResource( 5 )]
+position = Vector2( 3693.09, 385.362 )
+
+[node name="coin7" parent="Moedas" instance=ExtResource( 5 )]
+position = Vector2( 4399.84, 501.396 )
+
+[node name="coin8" parent="Moedas" instance=ExtResource( 5 )]
+position = Vector2( 5990.29, 487.763 )
+
+[node name="coin10" parent="Moedas" instance=ExtResource( 5 )]
+position = Vector2( 5076.92, 487.763 )
+
+[node name="coin9" parent="Moedas" instance=ExtResource( 5 )]
+position = Vector2( 6448.58, 483.327 )
+
+[node name="coin11" parent="Moedas" instance=ExtResource( 5 )]
+position = Vector2( 7266.08, 386.632 )
+
+[node name="coin14" parent="Moedas" instance=ExtResource( 5 )]
+position = Vector2( 10855.6, 501.031 )
+
+[node name="coin22" parent="Moedas" instance=ExtResource( 5 )]
+position = Vector2( 9760.11, 500.043 )
+
+[node name="coin15" parent="Moedas" instance=ExtResource( 5 )]
+position = Vector2( 11975.2, 237.119 )
+
+[node name="coin16" parent="Moedas" instance=ExtResource( 5 )]
+position = Vector2( 12405.1, 237.119 )
+
+[node name="coin17" parent="Moedas" instance=ExtResource( 5 )]
+position = Vector2( 12820, 237.119 )
+
+[node name="coin19" parent="Moedas" instance=ExtResource( 5 )]
+position = Vector2( 14661.4, 60.7721 )
+
+[node name="coin20" parent="Moedas" instance=ExtResource( 5 )]
+position = Vector2( 14989.5, 161.249 )
+
+[node name="coin21" parent="Moedas" instance=ExtResource( 5 )]
+position = Vector2( 14321, 265.826 )
+
+[node name="coin18" parent="Moedas" instance=ExtResource( 5 )]
+position = Vector2( 11526.3, 237.119 )
+
+[node name="coin12" parent="Moedas" instance=ExtResource( 5 )]
+position = Vector2( 6746.96, 188.355 )
+
+[node name="coin13" parent="Moedas" instance=ExtResource( 5 )]
+position = Vector2( 7933.02, 217.196 )
+
+[node name="coin_collected" type="AudioStreamPlayer" parent="Moedas"]
+stream = ExtResource( 6 )
+
+[node name="jogador" parent="." instance=ExtResource( 7 )]
+position = Vector2( 381.405, 227.416 )
+GRAVITY = 1300
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="MJ" parent="." instance=ExtResource( 8 )]
+position = Vector2( 17.6502, 295.054 )
+scale = Vector2( 1, 0.956859 )
+z_index = 1
+
+[node name="TimerChapeu" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="chapeu" parent="." instance=ExtResource( 9 )]
+position = Vector2( 104.096, -59.1151 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="back1" type="Sprite" parent="ParallaxBackground"]
+scale = Vector2( 0.826165, 1.00247 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 46.5655, 590.24 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 140.143, 590.24 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 238.608, 590.24 )
+texture = ExtResource( 2 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 331.487, 590.24 )
+texture = ExtResource( 2 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 424.365, 590.24 )
+texture = ExtResource( 2 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 522.831, 590.24 )
+texture = ExtResource( 2 )
+
+[node name="Sprite7" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 617.805, 590.24 )
+texture = ExtResource( 2 )
+
+[node name="Sprite8" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 715.572, 590.24 )
+texture = ExtResource( 2 )
+
+[node name="Sprite9" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 812.64, 590.24 )
+texture = ExtResource( 2 )
+
+[node name="Sprite10" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 909.011, 590.24 )
+texture = ExtResource( 2 )
+
+[node name="Sprite11" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 1005.38, 590.24 )
+texture = ExtResource( 2 )
+
+[node name="Sprite12" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 1024.93, 590.24 )
+texture = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+script = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 930.162
+margin_top = 26.5004
+margin_right = 970.162
+margin_bottom = 40.5004
+rect_scale = Vector2( 2.22138, 2.91152 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer"]
+modulate = Color( 0.85098, 0.490196, 0.360784, 0.243137 )
+scale = Vector2( 0.825809, 0.899773 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer"]
+visible = false
+scale = Vector2( 1.027, 0.9 )
+z_as_relative = false
+texture = ExtResource( 13 )
+centered = false
+
+[node name="sounds" type="Node" parent="."]
+
+[node name="rusbe" type="AudioStreamPlayer" parent="sounds"]
+stream = ExtResource( 14 )
+
+[node name="hat" type="AudioStreamPlayer" parent="sounds"]
+stream = ExtResource( 15 )
+
+[node name="shrek" type="AudioStreamPlayer" parent="sounds"]
+stream = ExtResource( 16 )
+volume_db = 24.0
+
+[node name="Themes" type="Node" parent="sounds"]
+editor/display_folded = true
+
+[node name="v1" type="AudioStreamPlayer" parent="sounds/Themes"]
+stream = ExtResource( 17 )
+
+[node name="v2" type="AudioStreamPlayer" parent="sounds/Themes"]
+stream = ExtResource( 18 )
+
+[node name="v3" type="AudioStreamPlayer" parent="sounds/Themes"]
+stream = ExtResource( 19 )
+
+[node name="v4" type="AudioStreamPlayer" parent="sounds/Themes"]
+stream = ExtResource( 20 )
+
+[node name="v5" type="AudioStreamPlayer" parent="sounds/Themes"]
+stream = ExtResource( 21 )
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+editor/display_folded = true
+
+[node name="back2" type="Sprite" parent="CanvasLayer2"]
+visible = false
+position = Vector2( -136.324, -78.9246 )
+scale = Vector2( 2.74248, 1.60897 )
+texture = ExtResource( 22 )
+centered = false
+
+[node name="Shrek_warning" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 7941.59, 326.56 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shrek_warning"]
+rotation = 1.5708
+scale = Vector2( 5, 1 )
+shape = SubResource( 4 )
+
+[node name="Shrek" parent="." instance=ExtResource( 23 )]
+position = Vector2( 8717.72, 482.021 )
+
+[node name="CanvasLayerShrek" type="CanvasLayer" parent="."]
+
+[node name="shrekinho" type="Sprite" parent="CanvasLayerShrek"]
+visible = false
+scale = Vector2( 2.89454, 1.82053 )
+texture = ExtResource( 24 )
+centered = false
+
+[node name="checkpoint" parent="." instance=ExtResource( 25 )]
+position = Vector2( 8996.51, 196.691 )
+
+[node name="pos_checkpoint" type="Position2D" parent="."]
+position = Vector2( 9128.79, 264.611 )
+
+[node name="pos_init" type="Position2D" parent="."]
+position = Vector2( 379.861, 226.966 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 19357.3, 478.717 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 26 )
+[connection signal="body_entered" from="Chao/fim" to="." method="_on_fim_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="MJ" to="." method="_on_MJ_body_entered"]
+[connection signal="timeout" from="TimerChapeu" to="." method="_on_TimerChapeu_timeout"]
+[connection signal="body_entered" from="chapeu" to="." method="_on_chapeu_body_entered"]
+[connection signal="body_entered" from="Shrek_warning" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Shrek" to="." method="_on_Shrek_body_entered"]
+[connection signal="body_entered" from="checkpoint" to="." method="_on_checkpoint_body_entered"]

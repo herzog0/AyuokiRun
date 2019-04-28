@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://jogador.gd" type="Script" id=1]
+[ext_resource path="res://sprites/player/2-down-left.png" type="Texture" id=2]
+[ext_resource path="res://sprites/player/3-down-front.png" type="Texture" id=3]
+[ext_resource path="res://sprites/player/1-raising-left.png" type="Texture" id=4]
+[ext_resource path="res://sprites/player/4-raised-front.png" type="Texture" id=5]
+[ext_resource path="res://mjsounds/jump_init.ogg" type="AudioStream" id=6]
+[ext_resource path="res://mjsounds/jump_land.ogg" type="AudioStream" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 17.0772, 44.8809 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "andando",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "parado",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "pulando",
+"speed": 5.0
+} ]
+
+[node name="jogador" type="KinematicBody2D"]
+position = Vector2( 192, 64 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.927811, 5.42418 )
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 132.502, 71.551 )
+scale = Vector2( 0.945663, 1.08521 )
+current = true
+limit_top = 0
+limit_bottom = 0
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+
+[node name="sprite" type="AnimatedSprite" parent="."]
+position = Vector2( -0.825012, -0.859283 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 2 )
+animation = "pulando"
+playing = true
+
+[node name="jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="fall" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
