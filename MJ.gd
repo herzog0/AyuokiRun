@@ -4,7 +4,7 @@ extends Area2D
 # var a = 2
 # var b = "text"
 var mj_multiplier = 1
-var VELOCITY = 150
+var VELOCITY = 120
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

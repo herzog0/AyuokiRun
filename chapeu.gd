@@ -5,7 +5,7 @@ extends Area2D
 # var b = "text"
 
 var velocidade = Vector2()
-var speed = 500
+var speed = 400
 var player
 
 # Called when the node enters the scene tree for the first time.
